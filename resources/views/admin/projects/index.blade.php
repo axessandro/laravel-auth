@@ -19,7 +19,8 @@
                         {{-- actions --}}
                         <td>
                             <div class="d-flex">
-                                <a class="btn btn-primary text-light text-decoration-none mx-1" href="#"><i
+                                <a class="btn btn-primary text-light text-decoration-none mx-1"
+                                    href="{{ route('admin.projects.show', $project->slug) }}"><i
                                         class="fa-solid fa-circle-info"></i></a>
                                 <a class="btn btn-warning text-light mx-1" href="#"><i
                                         class="fa-solid fa-pencil"></i></a>
