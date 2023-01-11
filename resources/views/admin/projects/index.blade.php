@@ -3,6 +3,12 @@
 @section('content')
     <div class="bg-dark">
 
+        @if (session('message'))
+            <div class="alert-success">
+                {{ session('message') }}
+            </div>
+        @endif
+
         <table class="table mb-0 table-striped table-secondary">
             <thead>
                 <tr>

@@ -37,9 +37,18 @@
                     <li>
                         <a href="{{ route('admin.projects.index') }}"
                             class="nav-link text-white
-                        {{ Route::currentRouteName() === 'admin.projects.index' ? 'bg-danger' : '' }}">
+                        {{ Route::currentRouteName() === 'admin.projects.index' ? 'bg-danger' : '' }}
+                        {{ Route::currentRouteName() === 'admin.projects.show' ? 'bg-danger' : '' }}">
                             <i class="fa-solid fa-box-archive text-light"></i>
                             Archive
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ route('admin.projects.create') }}"
+                            class="nav-link text-white
+                        {{ Route::currentRouteName() === 'admin.projects.create' ? 'bg-danger' : '' }}">
+                            <i class="fa-solid fa-plus"></i>
+                            New project
                         </a>
                     </li>
                 </ul>

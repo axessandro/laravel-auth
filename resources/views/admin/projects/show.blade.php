@@ -1,8 +1,12 @@
 @extends('layouts.admin')
 @section('title', $project->name)
 @section('content')
-    <div class="container text-light d-flex justify-content-center mt-4">
-        <div class="card" style="width: 30rem;">
+    <div class="container text-light d-flex flex-column mt-4">
+        <div>
+            <a href="{{ route('admin.projects.index') }}" class="btn btn-danger mb-4"><i
+                    class="fa-solid fa-arrow-left"></i></a>
+        </div>
+        <div class="card m-auto" style="width: 30rem;">
             <ul class="list-group list-group-flush">
 
                 {{-- id --}}

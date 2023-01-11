@@ -2,6 +2,6 @@
 @section('title', 'Dashboard')
 @section('content')
     <h1 class="text-light text-center">
-        Dashboard
+        Hello {{ Auth::user()->name }}
     </h1>
 @endsection
