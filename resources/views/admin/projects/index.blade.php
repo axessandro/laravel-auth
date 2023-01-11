@@ -29,8 +29,16 @@
                                 <a class="btn btn-primary text-light text-decoration-none mx-1"
                                     href="{{ route('admin.projects.show', $project->slug) }}"><i
                                         class="fa-solid fa-circle-info"></i></a>
-                                <a class="btn btn-warning text-light mx-1" href="#"><i
+                                <a class="btn btn-warning text-light mx-1"
+                                    href="{{ route('admin.projects.edit', $project->slug) }}"><i
                                         class="fa-solid fa-pencil"></i></a>
+                                <form action="{{ route('admin.projects.destroy', $project->slug) }}" method="POST">
+                                    @method('DELETE')
+                                    @csrf
+                                    <button type="submit" class="btn btn-danger text-light mx-1"
+                                        href="{{ route('admin.projects.edit', $project->slug) }}"><i
+                                            class="fa-solid fa-trash"></i></button>
+                                </form>
                             </div>
                         </td>
                         {{-- actions --}}
