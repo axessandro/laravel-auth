@@ -38,10 +38,15 @@ class ProjectController extends Controller
      */
     public function store(StoreProjectRequest $request)
     {
-        $formData = $request->all();
+        dd('ciao');
+        $formData = $request->validated();
         $formData['slug'] = Project::generateSlug($formData['name']);
-        $project = Project::create($formData);
-        return redirect()->route('admin.projects.index')->with('message', " '/$project->name'/ has been created successfully");
+        // $project = Project::create($formData);
+        $project = new Project();
+        $project->fill($formData);
+        $project->save();
+
+        return redirect()->route('admin.projects.index')->with('message', "$project->name has been created successfully");
     }
 
     /**

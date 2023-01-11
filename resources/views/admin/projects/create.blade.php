@@ -6,16 +6,13 @@
         <div class="container-md">
 
             <form action="{{ route('admin.projects.store') }}" method="POST">
-                @csrf
                 <div class="form-group mb-4">
                     <label for="name">Name:</label>
                     <input type="text" id="name" name="name" class="form-control">
                 </div>
                 <div class="form-group mb-4">
                     <label for="description">Description:</label>
-                    <textarea name="description" id="description" name="description" cols="30" rows="3" class="form-control">
-
-                    </textarea>
+                    <textarea name="description" id="description" name="description" cols="30" rows="3" class="form-control"></textarea>
                 </div>
                 <button class="btn btn-success" type="submit">Save</button>
             </form>
