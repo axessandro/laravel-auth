@@ -12,7 +12,7 @@
 </head>
 
 <body class="bg-dark">
-    <header class="border-bottom border-danger p-4 bg-dark d-flex justify-content-between" style="height: 9vh;">
+    <header class="border-bottom border-danger p-4 bg-dark d-flex justify-content-between">
         <h1 class="mb-0 text-light"><span class="text-danger">ADMIN</span> VIEW</h1>
         <a class="btn text-dark bg-white" href="{{ route('logout') }}"
             onclick="event.preventDefault();
