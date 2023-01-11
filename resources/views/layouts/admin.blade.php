@@ -5,14 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>@yield('title')</title>
 
     <!-- Usando Vite -->
     @vite(['resources/js/app.js'])
 </head>
 
 <body class="bg-dark">
-    <header class="p-4 bg-dark d-flex justify-content-between">
+    <header class="border-bottom border-danger p-4 bg-dark d-flex justify-content-between" style="height: 9vh;">
         <h1 class="mb-0 text-light"><span class="text-danger">ADMIN</span> VIEW</h1>
         <a class="btn text-dark bg-white" href="{{ route('logout') }}"
             onclick="event.preventDefault();
@@ -22,8 +22,8 @@
             @csrf
     </header>
 
-    <div class="d-flex">
-        <div class="sidebar">
+    <div class="d-flex" style="height: 91vh;">
+        <div class="sidebar border-end border-light p-2 mb-2 border-opacity-50">
             <div class="d-flex flex-column flex-shrink-0 p-3 text-bg-dark h-100" style="width: 280px;">
                 <ul class="nav nav-pills flex-column mb-auto">
                     <li>
@@ -46,7 +46,7 @@
             </div>
         </div>
 
-        <main class="w-100">
+        <main class="w-100 p-4">
             @yield('content')
         </main>
     </div>

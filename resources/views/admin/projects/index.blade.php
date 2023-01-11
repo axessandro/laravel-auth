@@ -1,6 +1,7 @@
 @extends('layouts.admin')
+@section('title', 'Archive')
 @section('content')
-    <div class="bg-dark m-auto">
+    <div class="bg-dark">
 
         <table class="table mb-0 table-striped table-secondary">
             <thead>
