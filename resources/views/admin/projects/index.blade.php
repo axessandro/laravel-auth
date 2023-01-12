@@ -4,12 +4,12 @@
     <div class="bg-dark">
 
         @if (session('message'))
-            <div class="alert-success">
+            <div class="alert alert-success">
                 {{ session('message') }}
             </div>
         @endif
 
-        <table class="table mb-0 table-striped table-secondary">
+        <table class="table mb-0 table-striped table-dark">
             <thead>
                 <tr>
                     <th>Name</th>
