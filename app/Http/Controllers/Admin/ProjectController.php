@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreProjectRequest;
 use App\Http\Requests\UpdateProjectRequest;
 use App\Models\Project;
+use Illuminate\Support\Facades\Storage;
 
 class ProjectController extends Controller
 {
@@ -40,6 +41,11 @@ class ProjectController extends Controller
     {
         $formData = $request->validated();
         $formData['slug'] = Project::generateSlug($formData['name']);
+        if ($request->hasFile('img')) {
+            $path = Storage::put('img', $request->img);
+            $formData['img'] = $path;
+        }
+
         $project = Project::create($formData);
 
         return redirect()->route('admin.projects.index')->with('message', "$project->name has been created successfully");
@@ -78,6 +84,14 @@ class ProjectController extends Controller
     {
         $formData = $request->validated();
         $formData['slug'] = Project::generateSlug($formData['name']);
+        if ($request->hasFile('img')) {
+            if ($project->img) {
+                Storage::delete($project->img);
+            }
+            $path = Storage::put('img', $request->img);
+            $formData['img'] = $path;
+        }
+
         $project->update($formData);
 
         return redirect()->route('admin.projects.index')->with('message', "$project->name has been updated successfully");

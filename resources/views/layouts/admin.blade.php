@@ -23,7 +23,7 @@
         </form>
     </header>
 
-    <div class="d-flex" style="height: 91vh;">
+    <div class="d-flex" style="min-height: 90vh;">
         <div class="sidebar border-end border-light p-2 mb-2 border-opacity-50">
             <div class="d-flex flex-column flex-shrink-0 p-3 text-bg-dark h-100" style="width: 280px;">
                 <ul class="nav nav-pills flex-column mb-auto">

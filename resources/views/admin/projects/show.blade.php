@@ -7,6 +7,15 @@
                     class="fa-solid fa-arrow-left"></i></a>
         </div>
         <div class="card m-auto" style="width: 30rem;">
+
+            @if ($project->img)
+                <img src="{{ asset('storage/' . $project->img) }}" alt="" class="card-img-top mx-auto"
+                    style="max-width: 50%;">
+            @else
+                <img src="{{ Vite::asset('resources/img/not-found.png') }}" alt="" class="card-img-top mx-auto"
+                    style="max-width: 50%;">
+            @endif
+
             <ul class="list-group list-group-flush">
 
                 {{-- id --}}

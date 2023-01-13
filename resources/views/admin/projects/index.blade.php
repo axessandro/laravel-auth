@@ -12,6 +12,7 @@
         <table class="table mb-0 table-striped table-dark">
             <thead>
                 <tr>
+                    <th>Img</th>
                     <th>Name</th>
                     <th>Created at</th>
                     <th>Actions</th>
@@ -21,6 +22,14 @@
                 {{-- rows --}}
                 @foreach ($projects as $project)
                     <tr>
+                        <td>
+                            @if ($project->img)
+                                <img src="{{ asset('storage/' . $project->img) }}" alt="" style="max-height: 80px;">
+                            @else
+                                <img src="{{ Vite::asset('resources/img/not-found.png') }}" alt=""
+                                    style="max-height: 80px;">
+                            @endif
+                        </td>
                         <td>{{ $project->name }}</td>
                         <td>{{ $project->created_at }}</td>
                         {{-- actions --}}

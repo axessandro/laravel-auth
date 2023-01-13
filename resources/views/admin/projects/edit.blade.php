@@ -5,9 +5,26 @@
         <h1 class="text-center">Edit</h1>
         <div class="container-md">
 
-            <form action="{{ route('admin.projects.update', $project->slug) }}" method="POST">
+            <form action="{{ route('admin.projects.update', $project->slug) }}" method="POST" enctype="multipart/form-data">
                 @method('PUT')
                 @csrf
+                <div class="form-group mb-4">
+                    <label for="img">Image:</label>
+                    <input type="file" name="img" id="img"
+                        class="form-control @error('img') is-invalid @enderror">
+                    @error('img')
+                        <div class="invalid-feedback">
+                            {{ $message }}
+                        </div>
+                    @enderror
+                    <div>
+                        <p class="mt-2 mb-0">Image preview:</p>
+                        <div class="img-wrapper d-flex justify-content-center">
+                            <img id="img-preview" src="{{ asset('storage/' . $project->img) }}" alt=""
+                                style="max-width: 200px;">
+                        </div>
+                    </div>
+                </div>
                 <div class="form-group mb-4">
                     <label for="name">Name:</label>
                     <input type="text" id="name" name="name" value="{{ old('name', $project->name) }}"
